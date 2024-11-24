@@ -21,30 +21,20 @@ double median(NumericVector vec){
     return *(vec.begin() + middle);
 }
 
-
-// [[Rcpp::export]]
-double matMedian(NumericMatrix mat){
-    NumericVector vec(mat.cols() * mat.rows());
-    for(int i = 0; i < mat.cols(); ++i){
-        for(int j = 0; i < mat.rows(); ++j){
-            vec[i * mat.cols() + j] = mat(j, i);
-        }
-    }
-    return median(vec);
-}
-
 // [[Rcpp::export]]
 double cpp_hle2(NumericVector x, NumericVector y){
     int ylen = y.length();
     int xlen = x.length();
 
-
+    //Create Matrix from differences
     NumericMatrix diff_mat (ylen, xlen);
     for(int i = 0; i < ylen; ++i){
         for(int j = 0; j < xlen; ++j){
             diff_mat(i, j) = y[i] - x[j];
         }
     }
+    
+    // Convert the matrix to a vector
     NumericVector diff_vec = diff_mat.import(diff_mat.begin(), diff_mat.end());
 
     return median(diff_vec);
