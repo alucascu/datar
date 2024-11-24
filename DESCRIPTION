@@ -13,3 +13,5 @@ LinkingTo:
     Rcpp
 Imports: 
     Rcpp
+URL: https://github.com/alucascu/datar
+BugReports: https://github.com/alucascu/datar/issues
