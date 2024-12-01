@@ -10,45 +10,45 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// median
-double median(NumericVector vec);
-RcppExport SEXP _datar_median(SEXP vecSEXP) {
+// cpp_median
+double cpp_median(std::vector<double> vec);
+RcppExport SEXP _datar_cpp_median(SEXP vecSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type vec(vecSEXP);
-    rcpp_result_gen = Rcpp::wrap(median(vec));
-    return rcpp_result_gen;
-END_RCPP
-}
-// cpp_hle2
-double cpp_hle2(NumericVector x, NumericVector y);
-RcppExport SEXP _datar_cpp_hle2(SEXP xSEXP, SEXP ySEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
-    rcpp_result_gen = Rcpp::wrap(cpp_hle2(x, y));
+    Rcpp::traits::input_parameter< std::vector<double> >::type vec(vecSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_median(vec));
     return rcpp_result_gen;
 END_RCPP
 }
 // cpp_hle1
-double cpp_hle1(NumericVector x);
-RcppExport SEXP _datar_cpp_hle1(SEXP xSEXP) {
+double cpp_hle1(std::vector<double> vec);
+RcppExport SEXP _datar_cpp_hle1(SEXP vecSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(cpp_hle1(x));
+    Rcpp::traits::input_parameter< std::vector<double> >::type vec(vecSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_hle1(vec));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cpp_hle2
+double cpp_hle2(std::vector<double> x, std::vector<double> y);
+RcppExport SEXP _datar_cpp_hle2(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<double> >::type x(xSEXP);
+    Rcpp::traits::input_parameter< std::vector<double> >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_hle2(x, y));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_datar_median", (DL_FUNC) &_datar_median, 1},
-    {"_datar_cpp_hle2", (DL_FUNC) &_datar_cpp_hle2, 2},
+    {"_datar_cpp_median", (DL_FUNC) &_datar_cpp_median, 1},
     {"_datar_cpp_hle1", (DL_FUNC) &_datar_cpp_hle1, 1},
+    {"_datar_cpp_hle2", (DL_FUNC) &_datar_cpp_hle2, 2},
     {NULL, NULL, 0}
 };
 

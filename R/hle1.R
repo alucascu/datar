@@ -24,6 +24,6 @@
 
 outer_hle1 <- function(x) {
     outer_vec <- outer(x, x, "+") / 2
-    tri <- upper.tri(outer_vec)
+    tri <- outer_vec[upper.tri(outer_vec)]
     return(median(tri))
 }
