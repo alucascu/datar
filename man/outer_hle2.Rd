@@ -23,6 +23,7 @@ function. Outer is less performant when compared to the C++ method.
 The estimate should be roughly equivalent, though.
 }
 \examples{
+library(datar)
 x <- rnorm(100, 10) # Random Normal with Location Parameter of 10
 y <- rnorm(100, 20) # Random Normal with Location Parameter of 20
 outer_hle2(x, y)

@@ -1,10 +1,8 @@
 Package: datar
-Title: What the Package Does (One Line, Title Case)
+Title: Implement Functions for Final Project
 Version: 0.0.0.9000
-Authors@R: 
-    person("Asher", "Lucas-Cuddeback", , "alucascu@nmu.edu", role = c("aut", "cre"),
-           comment = c(ORCID = "0009-0006-5361-4286"))
-Description: What the package does (one paragraph).
+Authors@R: person(given = "Asher", family = "Lucas-Cuddeback",email = "alucascu@nmu.edu", role = c("aut", "cre"), comment = c(ORCID = "0009-0006-5361-4286"))
+Description: This package implements a variety of functions for the DATA495 final project. This includes HLE1, HLE2, C++ versions of each and several modelling and boot functions. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -12,7 +10,9 @@ RoxygenNote: 7.3.2
 LinkingTo: 
     Rcpp
 Imports: 
-    Rcpp
+    boot,
+    Rcpp,
+    stats
 URL: https://github.com/alucascu/datar
 BugReports: https://github.com/alucascu/datar/issues
 Depends: 
@@ -20,6 +20,8 @@ Depends:
 LazyData: true
 Suggests: 
     knitr,
-    rmarkdown
-VignetteBuilder: knitr
+    rmarkdown,
+    quarto
+VignetteBuilder:
+  quarto 
 Config/rextendr/version: 0.3.1

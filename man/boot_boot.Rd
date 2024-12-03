@@ -26,8 +26,9 @@ which computes the bootstrap estimate of a given statistic
 }
 \examples{
 {
+library(datar)
 x <- rnorm(100, 10) # random normal distribution with mean = 10
-boot_boot(x, 1001) # use a bootstrap approximation of the mean
+boot_boot(x) # use a bootstrap approximation of the mean
 }
 
 }

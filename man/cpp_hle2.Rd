@@ -25,9 +25,10 @@ This function cannot allocate a vector of the correct size if the number of meas
 }
 \examples{
 {
+library(datar)
 x <- rnorm(100, 10) 
 y <- rnorm(100, 5) 
-cpp_hle2(x)
+datar::cpp_hle2(x, y)
 }
 }
 \references{

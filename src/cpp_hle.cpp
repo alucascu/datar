@@ -17,6 +17,7 @@
 //' @returns Numeric of median
 //'
 //' @examples{
+//' library(datar)
 //' x <- rnorm(100, 10) 
 //' cpp_median(x)
 //' }
@@ -24,6 +25,7 @@
 //' DATA495 lectures with Prof. Kloke. 
 //' 
 //' @aliases Median
+//' @export
 // [[Rcpp::export]]
 double cpp_median(std::vector<double> vec){
     if(vec.size() % 2 == 1){
@@ -55,8 +57,9 @@ double cpp_median(std::vector<double> vec){
 //' @returns Numeric representing the Hodges-Lehmann location estimator
 //'
 //' @examples{
+//' library(datar)
 //' x <- rnorm(100, 10) 
-//' cpp_hle1(x)
+//' datar::cpp_hle1(x)
 //'}
 //' @references
 //' DATA495 lectures with Prof. Kloke. 
@@ -64,6 +67,7 @@ double cpp_median(std::vector<double> vec){
 //' @seealso [outer_hle1()] The base-R implementation of HLE1
 //'
 //' @aliases HLE1
+//' @export
 // [[Rcpp::export]]
 double cpp_hle1(std::vector<double> vec){
     if(vec.size() > 40000){
@@ -73,8 +77,8 @@ double cpp_hle1(std::vector<double> vec){
 
 	std::vector<double> avgs(len * (len - 1) / 2);
 	for(auto i = 0; i < len; i++){
-		for(auto j = 0; j < len; j++){
-			avgs[j + (i * len * (len - 1)) / 2] = (vec[j] + vec[i]) / 2;		
+		for(auto j = 0; j < i; j++){
+			avgs[j + (i * (i - 1)) / 2] = (vec[j] + vec[i]) / 2;		
 		}	
 	}
 	return cpp_median(avgs);
@@ -97,9 +101,10 @@ double cpp_hle1(std::vector<double> vec){
 //' @returns Numeric representing the Hodges-Lehmann estimator of shift
 //'
 //' @examples{
+//' library(datar)
 //' x <- rnorm(100, 10) 
 //' y <- rnorm(100, 5) 
-//' cpp_hle2(x)
+//' datar::cpp_hle2(x, y)
 //'}
 //' @references
 //' DATA495 lectures with Prof. Kloke. 
@@ -107,6 +112,7 @@ double cpp_hle1(std::vector<double> vec){
 //' @seealso [outer_hle2()] The base-R implementation of HLE2
 //'
 //' @aliases HLE2
+//' @export
 // [[Rcpp::export]]
 double cpp_hle2(std::vector<double> x, std::vector<double> y){
 	int xLen = x.size();

@@ -15,6 +15,7 @@
 #' @returns Numeric of median
 #'
 #' @examples{
+#' library(datar)
 #' x <- rnorm(100, 10) 
 #' cpp_median(x)
 #' }
@@ -22,6 +23,7 @@
 #' DATA495 lectures with Prof. Kloke. 
 #' 
 #' @aliases Median
+#' @export
 cpp_median <- function(vec) {
     .Call(`_datar_cpp_median`, vec)
 }
@@ -41,8 +43,9 @@ cpp_median <- function(vec) {
 #' @returns Numeric representing the Hodges-Lehmann location estimator
 #'
 #' @examples{
+#' library(datar)
 #' x <- rnorm(100, 10) 
-#' cpp_hle1(x)
+#' datar::cpp_hle1(x)
 #'}
 #' @references
 #' DATA495 lectures with Prof. Kloke. 
@@ -50,6 +53,7 @@ cpp_median <- function(vec) {
 #' @seealso [outer_hle1()] The base-R implementation of HLE1
 #'
 #' @aliases HLE1
+#' @export
 cpp_hle1 <- function(vec) {
     .Call(`_datar_cpp_hle1`, vec)
 }
@@ -71,9 +75,10 @@ cpp_hle1 <- function(vec) {
 #' @returns Numeric representing the Hodges-Lehmann estimator of shift
 #'
 #' @examples{
+#' library(datar)
 #' x <- rnorm(100, 10) 
 #' y <- rnorm(100, 5) 
-#' cpp_hle2(x)
+#' datar::cpp_hle2(x, y)
 #'}
 #' @references
 #' DATA495 lectures with Prof. Kloke. 
@@ -81,6 +86,7 @@ cpp_hle1 <- function(vec) {
 #' @seealso [outer_hle2()] The base-R implementation of HLE2
 #'
 #' @aliases HLE2
+#' @export
 cpp_hle2 <- function(x, y) {
     .Call(`_datar_cpp_hle2`, x, y)
 }

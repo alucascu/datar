@@ -22,12 +22,16 @@ library(boot)
 #'  confidence intervals
 #'
 #' @examples{
+#' library(datar)
 #' x <- rnorm(100, 10) # random normal distribution with mean = 10
 #' boot_r(x, mean, 10) # use a bootstrap approximation of the mean
 #' }
 #'
 #' @references
 #' DATA 495 Lectures at Northern Michigan University by John Kloke
+#'
+#' @importFrom stats quantile
+#' @export
 boot_r <- function(x, func, n, B = 1001) {
     func <- match.fun(func)
 
@@ -54,12 +58,14 @@ boot_r <- function(x, func, n, B = 1001) {
 #' @returns The numeric mean of the given vector
 #'
 #' @examples{
+#' library(datar)
 #' x <- rnorm(100, 10) # random normal distribution with mean = 10
 #' means(x) # compute the mean
 #' }
 #'
 #' @references
 #' DATA 495 Lectures at Northern Michigan University by John Kloke
+#' @export
 means <- function(x) {
     return(mean(x, trim = 0))
 }
@@ -83,12 +89,15 @@ means <- function(x) {
 #'  confidence intervals
 #'
 #' @examples{
+#' library(datar)
 #' x <- rnorm(100, 10) # random normal distribution with mean = 10
-#' boot_boot(x, 1001) # use a bootstrap approximation of the mean
+#' boot_boot(x) # use a bootstrap approximation of the mean
 #' }
 #'
 #' @references
 #' DATA 495 Lectures at Northern Michigan University by John Kloke
+#' @importFrom boot boot
+#' @export
 boot_boot <- function(x, func = means, B = 1001) {
     return(boot(x, func, R = B, sim = "parametric"))
 }

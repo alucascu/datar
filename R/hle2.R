@@ -15,6 +15,7 @@
 #' @returns Numeric Estimate of the shift of location parameter
 #'
 #' @examples
+#' library(datar)
 #' x <- rnorm(100, 10) # Random Normal with Location Parameter of 10
 #' y <- rnorm(100, 20) # Random Normal with Location Parameter of 20
 #' outer_hle2(x, y)
@@ -23,7 +24,7 @@
 #'
 #' @references
 #' DATA 495 Lectures at Northern Michigan University by John Kloke
-
+#' @export
 outer_hle2 <- function(x, y) {
     outer_vec <- outer(y, x, "-")
     return(median(outer_vec))
@@ -90,3 +91,58 @@ outer_hle2 <- function(x, y) {
 #'
 #' @references \url{https://www.kaggle.com/datasets/impapan/forest-covertype-dataset}
 "covertype"
+
+#' Proton-Proton Collision Dataset
+#'
+#' @description
+#' A dataset which shows records the data from Proton-Proton collsions at CERN
+#'
+#' @details
+#' # From the Dataset Publishers
+#' ## Context
+#' MultiJet primary dataset in AOD format from RunB of 2010.
+#' This dataset contains runs from 2010 RunB. The list of all validated runs,
+#' which must be applied to all analyses, can be found in
+#' \url{http://opendata.cern.ch/record/1000}
+#' This file contains events from the MultiJet primary dataset from
+#' the CMS open data release, and computes the razor variables MR and Rsq,
+#' used in supersymmetric particle searches. More details on the razor
+#' variables can be found in Phys. Rev. D 90, 112001
+#' \url{https://journals.aps.org/prd/pdf/10.1103/PhysRevD.90.112001}
+#' ## Content
+#' \itemize{
+#' \item Run: The run number of the event.
+#' \item Lumi: The lumi section of the event.
+#' \item Event: The event number of the event.
+#' \item MR: First razor kinematic variable, the MR variable is an
+#'      estimate of an overall mass scale, which in the limit of massless
+#'      decay products equals the mass of the heavy parent particle.
+#' \item MR: First razor kinematic variable, the MR variable is
+#'      an estimate of an overall mass scale, which in the limit of
+#'      massless decay products equals the mass of the heavy parent particle.
+#' \item Rsq: Second razor kinematic variable, the Rsq variable is
+#'       the square of the ratio R, which quantifies the flow of
+#'        energy in the plane perpendicular to the beam and the partitioning
+#'        of momentum between visible and invisible particles.
+#' \item E1,Px1,Py1,Pz1: The four-vector of the leading megajet
+#'      (with the largest transverse momentum).
+#' \item E2,Px2,Py2,Pz2: The four-vector of the subleading megajet
+#'      (with the largest transverse momentum).
+#' \item HT: The scalar sum of the transverse momentum of the jets.
+#' \item MET: The magnitude of the vector sum of the transverse energy of
+#'      the particles in the event.
+#' \item nJets: The number of jets with transverse momentum above 40 GeV.
+#' \item nBJets: The number of b-tagged jets with transverse momentum
+#'      above 40 GeV.
+#' }
+#' @name proton-proton collisions
+#'
+#' @docType data
+#'
+#' @keywords data
+#'
+#' @usage
+#' data(pp_collision)
+#'
+#' @references \url{https://www.kaggle.com/datasets/fedesoriano/multijet-primary-dataset/data}
+"pp_collision"

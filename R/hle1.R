@@ -14,6 +14,7 @@
 #' @returns Numeric Estimate of the location parameter
 #'
 #' @examples
+#' library(datar)
 #' x <- rnorm(100, 10) # Random Normal with Location Parameter of 10
 #' outer_hle1(x)
 #'
@@ -21,7 +22,8 @@
 #'
 #' @references
 #' DATA 495 Lectures at Northern Michigan University by John Kloke
-
+#' @importFrom stats median
+#' @export
 outer_hle1 <- function(x) {
     outer_vec <- outer(x, x, "+") / 2
     tri <- outer_vec[upper.tri(outer_vec)]

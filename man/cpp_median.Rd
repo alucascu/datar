@@ -22,6 +22,7 @@ if the vector were sorted, would be in the middle position and then returns that
 }
 \examples{
 {
+library(datar)
 x <- rnorm(100, 10) 
 cpp_median(x)
 }

@@ -21,6 +21,7 @@ The numeric mean of the given vector
 }
 \examples{
 {
+library(datar)
 x <- rnorm(100, 10) # random normal distribution with mean = 10
 means(x) # compute the mean
 }
