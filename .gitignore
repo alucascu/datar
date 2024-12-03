@@ -6,3 +6,6 @@
 .quarto
 inst/doc
 ./.vscode
+README.html
+README.Rmd
+README.rmd
