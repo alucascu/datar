@@ -1,0 +1,60 @@
+---
+title: "code_estimate"
+format: 
+  html:
+    toc: true
+    html-math-method: mathjax
+
+vignette: >
+  %\VignetteIndexEntry{Timing Results}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+Much work was put into this package to try and get it ready for submission. 
+
+# Boots File
+
+The raw code lines for this file is 233. Much of this is writing the manuals, however. There are 6 functions that 
+make up this file. 
+
+  - `boot_r` Which is the self-written bootstrap method
+    - 9 lines
+  - `means` Merely a helper function to avoid some weird trim errors I was getting
+    - 2 lines
+  - `boot_boot` A boot package derived function
+    - 2 lines
+  - `dual_boot` A bootstrap function for use in applications with 2 datasets
+    - 19 lines
+  - `gen_dist` A function to generate many samples from a given distribution
+    - 14 lines
+  - `diff_means` A difference of means function
+    - 4 lines
+
+# HLE1
+
+There is only one function in HLE1. With the manual, this file is 31 lines however the actual function length is 4 lines
+
+# HLE2
+
+There is similarly only one function in HLE2 which runs to 3 lines. However, this file also documents my datasets so is 
+148 lines in total
+
+# cpp_hle
+
+This file has 3 functions for a total of 134 lines
+
+  - `cpp_median` For finding the median of a vector
+    - 12 Lines
+  - `cpp_hle1` For estimate of location
+    - 13 Lines
+  - `cpp_hle2` For estimate of shift
+    - 17 lines
+
+# Total
+In terms of raw output. I wrote 546 lines of code by hand. With 99 of those being functions. 
+
+# References
+
+The main references I used were the DATA495 lectures and package documentation. 

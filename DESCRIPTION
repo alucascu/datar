@@ -11,7 +11,11 @@ LinkingTo:
     Rcpp
 Imports: 
     boot,
+    dplyr,
+    magrittr,
+    purrr,
     Rcpp,
+    Rmisc,
     stats
 URL: https://github.com/alucascu/datar
 BugReports: https://github.com/alucascu/datar/issues
@@ -23,5 +27,5 @@ Suggests:
     rmarkdown,
     quarto
 VignetteBuilder:
-  quarto 
+    quarto
 Config/rextendr/version: 0.3.1
