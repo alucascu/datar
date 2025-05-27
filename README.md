@@ -7,8 +7,7 @@
 
 <!-- badges: end -->
 
-The goal of datar is to get a good grade on this final project by
-showing how much I have learned in the past semester
+Datar implements non-parametric statistical methods such as the Hodges-Lehmann Estimate of Loctation
 
 ## Installation
 
