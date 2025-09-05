@@ -7,7 +7,7 @@
 
 <!-- badges: end -->
 
-Datar implements non-parametric statistical methods such as the Hodges-Lehmann Estimate of Loctation
+Datar implements non-parametric statistical methods such as the Hodges-Lehmann Estimate of Location
 
 ## Installation
 
